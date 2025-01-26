@@ -20,3 +20,5 @@ def filter_by_sale_status_of_out_of_stock(context):
 @then('Verify each product contains the Out of Stock')
 def verify_out_of_stock_box(context):
     context.app.header.verify_out_of_stock_box()
+
+########################

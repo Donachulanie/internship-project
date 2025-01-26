@@ -20,3 +20,5 @@ def click_continue_button(context):
 @then('Verify user is logged in successfully')
 def verify_user_logged_in(context):
     context.app.sign_in_page.verify_user_logged_in()
+
+###########################
