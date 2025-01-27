@@ -21,4 +21,3 @@ def click_continue_button(context):
 def verify_user_logged_in(context):
     context.app.sign_in_page.verify_user_logged_in()
 
-###########################
