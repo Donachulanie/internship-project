@@ -8,13 +8,23 @@ class Header(BasePage):
 
     CLICK_FILTER_SALES_STATUS = (By.CSS_SELECTOR, "[id='Location-2']")
     OUT_OF_STOCK_FROM_THE_SALES_STATUS_DROP_DOWN_FILTER =(By.CSS_SELECTOR,"[value*='Out of stock']")
-    OFF_PLAN_BTN = (By.CSS_SELECTOR, '._1-link-menu.w-inline-block.w--current')
+    OFF_PLAN_BTN_LEFT_SIDE_MENU = (By.CSS_SELECTOR, '._1-link-menu.w-inline-block.w--current')
     TOTAL_PROJECT_ITEMS_ON_HEADER = (By.CSS_SELECTOR, '.proparties_text_block.mobile')
     PRE_SALE_EOI_BOX = (By.CSS_SELECTOR, "[class*='commision-text-box']")
     OUT_OF_STOCK_BOX = (By.CSS_SELECTOR,"[class*='_5-comission']")
+    MAIN_MENU_BUTTON = (By.CSS_SELECTOR, '.div-block-33')
+    SECONDARY_BTN = (By.CSS_SELECTOR, "[id='w-node-_99a5c496-8f77-9959-16dd-e8eb9b22b697-9b22b68b']")
+    INCOME_BTN = (By.CSS_SELECTOR,"[href='/ambassadors']")
+    OFF_PLAN_BTN_FROM_HEADER = (By.CSS_SELECTOR, "[id='w-node-b528dfcf-d2ee-f936-302e-86e97f0796e8-7f66df20']")
+    MY_LISTING_FROM_HEADER = (By.CSS_SELECTOR, "[href='/my-secondary-listings']")
+    FILTER_BTN = (By.CSS_SELECTOR, "[class='filter-button w-inline-block']")
+    CLOSE_FILTER_WINDOW = (By.CSS_SELECTOR, "[class='h2-text-filters _1']")
+    MEMBER_ICON_PAGE_BOTTOM = (By.CSS_SELECTOR, "[class='text_block_account-2']")
+
+
 
     def click_on_off_plan_from_side_menu(self):
-        self.click(*self.OFF_PLAN_BTN)
+        self.click(*self.OFF_PLAN_BTN_LEFT_SIDE_MENU)
         sleep(5)
 
 
@@ -35,6 +45,23 @@ class Header(BasePage):
     def verify_out_of_stock_box(self):
         self.find_element(*self.OUT_OF_STOCK_BOX)
 
+    def click_on_main_menu(self):
+        self.click(*self.MAIN_MENU_BUTTON)
 
-############################
+    def click_on_secondary_button(self):
+        self.click(*self.SECONDARY_BTN)
+
+    def click_on_income_button(self):
+        self.click(*self.INCOME_BTN)
+        sleep(5)
+
+    def click_my_listing_button_from_header(self):
+        self.wait_and_click(*self.MY_LISTING_FROM_HEADER)
+
+    def click_on_filter_button(self):
+        self.click(*self.FILTER_BTN)
+
+    def click_close_filter_window(self):
+        self.click(*self.CLOSE_FILTER_WINDOW)
+
 
