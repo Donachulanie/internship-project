@@ -1,4 +1,6 @@
 from selenium.webdriver.common.by import By
+
+from features.steps.reelly_main_page import verify_out_of_stock_box
 from pages.base_page import BasePage
 from time import sleep
 
@@ -42,8 +44,13 @@ class Header(BasePage):
     # def verify_url(self,current_url):
     #     self.verify_url(current_url)
 
-    def verify_out_of_stock_box(self):
-        self.find_element(*self.OUT_OF_STOCK_BOX)
+    def verify_out_of_stock_box(self,text):
+        self.find_elements(*self.OUT_OF_STOCK_BOX)
+        elements = self.find_elements(*self.OUT_OF_STOCK_BOX)
+        for element in elements:
+            self.verify_text('Out of stock',*self.OUT_OF_STOCK_BOX)
+
+
 
     def click_on_main_menu(self):
         self.click(*self.MAIN_MENU_BUTTON)
