@@ -53,9 +53,11 @@ class Header(BasePage):
 
 
     def click_on_main_menu(self):
+        sleep(2)
         self.click(*self.MAIN_MENU_BUTTON)
 
     def click_on_secondary_button(self):
+        sleep(2)
         self.click(*self.SECONDARY_BTN)
 
     def click_on_income_button(self):
@@ -63,12 +65,15 @@ class Header(BasePage):
         sleep(5)
 
     def click_my_listing_button_from_header(self):
+        sleep(2)
         self.wait_and_click(*self.MY_LISTING_FROM_HEADER)
 
     def click_on_filter_button(self):
+        sleep(2)
         self.click(*self.FILTER_BTN)
 
     def click_close_filter_window(self):
+        sleep(2)
         self.click(*self.CLOSE_FILTER_WINDOW)
 
 
