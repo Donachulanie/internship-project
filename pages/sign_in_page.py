@@ -2,6 +2,7 @@ from time import sleep
 
 from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
 
 
 class SignInPage(BasePage):
@@ -20,6 +21,7 @@ class SignInPage(BasePage):
 
     def verify_user_logged_in(self):
         self.wait_for_element_invisible(*self.CONTINUE_BTN_IN_SIGN_IN_PAGE)
+
 
 
 
