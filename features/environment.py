@@ -7,15 +7,17 @@ from selenium.webdriver.chrome.options import Options
 
 from app.application import Application
 
+# Command to run tests with Allure & Behave:
+# behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/target_search.feature
 
 #def browser_init(context):
 def browser_init(context, scenario_name):
     """
     :param context: Behave context
     """
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     # driver_path = GeckoDriverManager().install()
     # service = Service(driver_path)
@@ -30,21 +32,21 @@ def browser_init(context, scenario_name):
     #     service=service
     # )
 
-    ### BROWSERSTACK ###
-    #Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    bs_user = 'donaamaraarachch_6AHImh'
-    bs_key = '9aa6DPQWq6k7Hx7J2btP'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        "os" : "Windows",
-        "osVersion" : "11",
-        'browserName': 'edge',
-        'sessionName': scenario_name,
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
+    # ### BROWSERSTACK ###
+    # #Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
+    # bs_user = 'donaamaraarachch_6AHImh'
+    # bs_key = '9aa6DPQWq6k7Hx7J2btP'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     "os" : "Windows",
+    #     "osVersion" : "11",
+    #     'browserName': 'edge',
+    #     'sessionName': scenario_name,
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)

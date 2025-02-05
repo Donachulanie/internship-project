@@ -1,5 +1,5 @@
 Feature: Test for left side menu buttons
-
+  @smoke
   Scenario: User can click on the side menu buttons
     Given Open Reelly main page
     When input valid donachulanie@yahoo.com and Victoria57# on sign in page

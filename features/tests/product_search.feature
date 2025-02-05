@@ -1,5 +1,5 @@
 Feature: Test for filters
-
+  @smoke
   Scenario: User can filter by Out of Stock
     Given Open Reelly main page
     When input valid donachulanie@yahoo.com and Victoria57# on sign in page
