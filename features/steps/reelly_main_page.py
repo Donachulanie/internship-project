@@ -1,7 +1,11 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from behave import given, when, then
 from time import sleep
+
+from selenium.webdriver.support.expected_conditions import presence_of_element_located
+
 
 @when('Click on “Off plan” at the left side menu')
 def click_on_off_plan_from_left_side_menu(context):
@@ -33,6 +37,7 @@ def click_on_secondary_button(context):
 
 @when('Click on "Income"')
 def click_on_income_button(context):
+    sleep(2)
     context.app.header.click_on_income_button()
 
 @when('Click on "My-listing" button from the header')
